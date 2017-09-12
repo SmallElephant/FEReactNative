@@ -61,3 +61,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+ReactNative_1/node_modules/
+ReactNative_1/iOS/PushDemo/Pods
