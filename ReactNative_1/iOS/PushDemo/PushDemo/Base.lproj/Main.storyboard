@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="nNR-E8-AQL">
             <objects>
-                <viewController id="tII-Ww-0HE" sceneMemberID="viewController">
+                <viewController id="tII-Ww-0HE" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z9a-LM-rn5"/>
                         <viewControllerLayoutGuide type="bottom" id="f9D-Jr-cAu"/>
@@ -46,6 +46,9 @@
                                 <state key="normal" title="Push">
                                     <color key="titleColor" red="0.12183000200000001" green="0.58609332849999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchAction:" destination="tII-Ww-0HE" eventType="touchUpInside" id="G7X-tb-LTk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPw-0q-85a">
                                 <rect key="frame" x="50" y="214" width="275" height="50"/>

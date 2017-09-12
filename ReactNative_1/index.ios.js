@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native';
 
-class RNPushComponent extends React.Component {
+class RNComponet extends React.Component {
   render() {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
 });
 
 // 整体js模块的名称
-AppRegistry.registerComponent('PushDemo', () => RNPushComponent);
+AppRegistry.registerComponent('PushDemo', () => RNComponet);
