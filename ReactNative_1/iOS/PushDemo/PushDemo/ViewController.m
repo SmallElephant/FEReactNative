@@ -27,7 +27,7 @@
 }
 
 - (IBAction)touchAction:(UIButton *)sender {
-    NSLog(@"High Score Button Pressed");
+    NSLog(@"Push按钮点击");
     NSURL *jsCodeLocation = [NSURL
                              URLWithString:@"http://10.10.7.40:8081/index.ios.bundle?platform=ios"];
     RCTRootView *rootView =
@@ -37,11 +37,11 @@
      @{
        @"scores" : @[
                @{
-                   @"name" : @"Alex",
-                   @"value": @"42"
+                   @"name" : @"FlyElephant",
+                   @"value": @"100"
                    },
                @{
-                   @"name" : @"Joel",
+                   @"name" : @"Keso",
                    @"value": @"10"
                    }
                ]
