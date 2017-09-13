@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <React/RCTRootView.h>
+#import "ReactViewController.h"
 
 @interface ViewController ()
 
@@ -28,28 +28,8 @@
 
 - (IBAction)touchAction:(UIButton *)sender {
     NSLog(@"Push按钮点击");
-    NSURL *jsCodeLocation = [NSURL
-                             URLWithString:@"http://10.10.7.40:8081/index.ios.bundle?platform=ios"];
-    RCTRootView *rootView =
-    [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
-                         moduleName        : @"PushDemo"
-                         initialProperties :
-     @{
-       @"scores" : @[
-               @{
-                   @"name" : @"FlyElephant",
-                   @"value": @"100"
-                   },
-               @{
-                   @"name" : @"Keso",
-                   @"value": @"10"
-                   }
-               ]
-       }
-                          launchOptions    : nil];
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view = rootView;
-    [self presentViewController:vc animated:YES completion:nil];
+    ReactViewController *controller = [[ReactViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

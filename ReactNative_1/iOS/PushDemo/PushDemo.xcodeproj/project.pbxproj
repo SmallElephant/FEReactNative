@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80E82011F692D070018D8AE /* ReactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E82001F692D070018D8AE /* ReactViewController.m */; };
 		A83C55411F67BEB300BBF3C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C55401F67BEB300BBF3C8 /* main.m */; };
 		A83C55441F67BEB300BBF3C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C55431F67BEB300BBF3C8 /* AppDelegate.m */; };
 		A83C55471F67BEB300BBF3C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C55461F67BEB300BBF3C8 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		4FA30BDDEF53F48D7802201E /* Pods-PushDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PushDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PushDemo/Pods-PushDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A80E81FF1F692D070018D8AE /* ReactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactViewController.h; sourceTree = "<group>"; };
+		A80E82001F692D070018D8AE /* ReactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactViewController.m; sourceTree = "<group>"; };
 		A83C553C1F67BEB300BBF3C8 /* PushDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A83C55401F67BEB300BBF3C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A83C55421F67BEB300BBF3C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				A83C55431F67BEB300BBF3C8 /* AppDelegate.m */,
 				A83C55451F67BEB300BBF3C8 /* ViewController.h */,
 				A83C55461F67BEB300BBF3C8 /* ViewController.m */,
+				A80E81FF1F692D070018D8AE /* ReactViewController.h */,
+				A80E82001F692D070018D8AE /* ReactViewController.m */,
 				A83C55481F67BEB300BBF3C8 /* Main.storyboard */,
 				A83C554B1F67BEB300BBF3C8 /* Assets.xcassets */,
 				A83C554D1F67BEB300BBF3C8 /* LaunchScreen.storyboard */,
@@ -353,6 +358,7 @@
 			files = (
 				A83C55471F67BEB300BBF3C8 /* ViewController.m in Sources */,
 				A83C55441F67BEB300BBF3C8 /* AppDelegate.m in Sources */,
+				A80E82011F692D070018D8AE /* ReactViewController.m in Sources */,
 				A83C55411F67BEB300BBF3C8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -589,6 +595,7 @@
 				A83C556B1F67BEB300BBF3C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A83C556C1F67BEB300BBF3C8 /* Build configuration list for PBXNativeTarget "PushDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -597,6 +604,7 @@
 				A83C556E1F67BEB300BBF3C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A83C556F1F67BEB300BBF3C8 /* Build configuration list for PBXNativeTarget "PushDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -605,6 +613,7 @@
 				A83C55711F67BEB300BBF3C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

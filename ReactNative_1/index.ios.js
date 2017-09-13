@@ -8,29 +8,36 @@ import {
   View
 } from 'react-native';
 
-class RNComponet extends React.Component {
+import MyFlatList from './app/list';
+
+class rootApp extends React.Component {
   render() {
     var contents = this.props["scores"].map(
       score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
     );
-    return (
-      <View style={styles.container}>
-        <Text style={styles.highScoresTitle}>
-          2048 High Scores!
-        </Text>
-        <Text style={styles.scores}>    
-          {contents}
-        </Text>
-      </View>
-    );
+
+    // return (
+    //   <View style={styles.container}>
+    //     <Text style={styles.highScoresTitle}>
+    //       2048 High Scores!
+    //     </Text>
+    //     <Text style={styles.scores}>
+    //       {contents}
+    //     </Text>
+    //   </View>
+    // );
+
+      return (
+        <View style={styles.container}>
+            <MyFlatList/>
+        </View>
+      );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#FFFFFF',
   },
   highScoresTitle: {
@@ -46,4 +53,4 @@ const styles = StyleSheet.create({
 });
 
 // 整体js模块的名称
-AppRegistry.registerComponent('PushDemo', () => RNComponet);
+AppRegistry.registerComponent('PushDemo', () => rootApp);
