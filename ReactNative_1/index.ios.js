@@ -8,48 +8,47 @@ import {
   View
 } from 'react-native';
 
-import MyFlatList from './app/list';
+//导入stack导航组件
+import { StackNavigator } from 'react-navigation';
 
-class rootApp extends React.Component {
-  render() {
-    var contents = this.props["scores"].map(
-      score => <Text key={score.name}>{score.name}:{score.value}{"\n"}</Text>
-    );
+// class rootApp extends React.Component {
+//   render() {
+//       return (
+//         <View style={styles.container}>
+//             <MyFlatList/>
+//         </View>
+//       );
+//   }
+// }
+//
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#FFFFFF',
+//   },
+//   highScoresTitle: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   scores: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });
 
-    // return (
-    //   <View style={styles.container}>
-    //     <Text style={styles.highScoresTitle}>
-    //       2048 High Scores!
-    //     </Text>
-    //     <Text style={styles.scores}>
-    //       {contents}
-    //     </Text>
-    //   </View>
-    // );
-
-      return (
-        <View style={styles.container}>
-            <MyFlatList/>
-        </View>
-      );
-  }
+class HomeScreen extends React.Component {
+    static navigationOptions = {
+        title: 'Welcome',
+    };
+    render() {
+        return <Text>Hello, Navigation!</Text>;
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-  highScoresTitle: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  scores: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+const rootApp = StackNavigator({
+    Home: { screen: HomeScreen },
 });
 
 // 整体js模块的名称

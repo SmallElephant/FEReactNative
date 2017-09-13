@@ -7,6 +7,9 @@ import {
     Button,
 } from 'react-native';
 
+//导入stack导航组件
+import { StackNavigator } from 'react-navigation';
+
 var ITEM_HEIGHT = 100;
 
 export default class MyFlatList extends Component {
