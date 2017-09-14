@@ -15,30 +15,44 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-const arrowIcon = require('./left-arrow.png');
+var originalData = [
+    {title: '什么是积分', data: ['Devin']},
+    {title: '积分如何获得', data: ['Jackson']},
+    {title: '标题宽度比例限制宽度比例限制这个为比例…', data: ['Jackson']},
+    {title: '积分派发时间', data: ['Jackson']},
+    {title: '积分有效期', data: ['Jackson']}
+];
 
 export default class MySectionList extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
-            originalData: [
-                {title: '什么是积分--这篇博客稍微讲解下React-Native中的布局。比较简单。RN的而布局是用css中的flexbox布局，所以布局起来与android传统的布局样式有点像。接下来就结合图片一起来看看。', data: ['Devin']},
-                {title: '积分如何获得', data: ['Jackson']},
-                {title: '标题宽度比例限制宽度比例限制这个为比例…', data: ['Jackson']},
-                {title: '积分派发时间', data: ['Jackson']},
-                {title: '积分有效期', data: ['Jackson']}
+            displayData: [
+                {title: '什么是积分', data: []},
+                {title: '积分如何获得', data: []},
+                {title: '标题宽度比例限制宽度比例限制这个为比例…', data: []},
+                {title: '积分派发时间', data: []},
+                {title: '积分有效期', data: []}
             ]
         };
+
+        for (var i = 0; i < this.state.displayData.length; i++) {
+            this.state.displayData[i]['data'] = [];
+            this.state.displayData[i]['key'] = i;
+            this.state.displayData[i]['isExpanded'] = '0';
+        }
     }
 
     _sectionHeader = (data) => {
         console.log('========'+JSON.stringify(data));
+        var imgPath = data.section.isExpanded == '0' ?  require('./down.png') : require('./up.png');
          return <TouchableOpacity style = {styles.sectionHeader}
-                              onPress={()=>{ alert('test'); }}>
+                              onPress={()=>{ this.toggle(data); }}>
                 <View style = {{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                     <Text style = { styles.sectionText } numberOfLines = { 1 } >{data.section.title}</Text>
                     <View style = { styles.sectionImage }>
-                        <Image source = { arrowIcon } style = { {width: 12, height: 12} }/>
+                        <Image source = { imgPath } style = { {width: 12, height: 12} }/>
                     </View>
                 </View>
             </TouchableOpacity>
@@ -49,13 +63,33 @@ export default class MySectionList extends Component {
         return <Text style={styles.item}>{data.item}</Text>
     };
 
+    toggle(data) {
+        var key = data.section.key;
+        // console.log('获取出来的数据:'+ +JSON.stringify(this.state.displayData[key]));
+        if (data.section.isExpanded == '0') {
+            this.state.displayData[key].data = originalData[key].data;
+            this.state.displayData[key].isExpanded = '1';
+            this.setState({
+                displayData: this.state.displayData
+            });
+        } else {
+            this.state.displayData[key].data = [];
+            this.state.displayData[key].isExpanded = '0';
+            this.setState({
+                displayData: this.state.displayData
+            });
+        }
+        console.log('点击的数据:'+JSON.stringify(data));
+        console.log('修改之后的数据:'+ JSON.stringify(this.state.displayData[key]));
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <SectionList
-                    sections = { this.state.originalData }
-                    renderItem = { this._sectionItem }
-                    renderSectionHeader = { this._sectionHeader }
+                    sections = { this.state.displayData }
+                    renderItem = { this._sectionItem.bind(this) }
+                    renderSectionHeader = { this._sectionHeader.bind(this) }
                 />
             </View>
         );
