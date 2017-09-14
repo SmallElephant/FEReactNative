@@ -22,7 +22,7 @@ export default class MySectionList extends Component {
         super(props);
         this.state = {
             originalData: [
-                {title: '什么是积分', data: ['Devin']},
+                {title: '什么是积分--这篇博客稍微讲解下React-Native中的布局。比较简单。RN的而布局是用css中的flexbox布局，所以布局起来与android传统的布局样式有点像。接下来就结合图片一起来看看。', data: ['Devin']},
                 {title: '积分如何获得', data: ['Jackson']},
                 {title: '标题宽度比例限制宽度比例限制这个为比例…', data: ['Jackson']},
                 {title: '积分派发时间', data: ['Jackson']},
@@ -35,8 +35,8 @@ export default class MySectionList extends Component {
         console.log('========'+JSON.stringify(data));
          return <TouchableOpacity style = {styles.sectionHeader}
                               onPress={()=>{ alert('test'); }}>
-                <View style = {{flex: 1, flexDirection: 'row'}}>
-                    <Text style={ styles.sectionText }>{data.section.title}</Text>
+                <View style = {{flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style = { styles.sectionText } numberOfLines = { 1 } >{data.section.title}</Text>
                     <View style = { styles.sectionImage }>
                         <Image source = { arrowIcon } style = { {width: 12, height: 12} }/>
                     </View>
@@ -75,9 +75,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     sectionText: {
-        flex: 17,
+        flex: 22,
         paddingLeft: 15,
-        paddingTop: 20,
         backgroundColor: 'red'
     },
     sectionImage: {
