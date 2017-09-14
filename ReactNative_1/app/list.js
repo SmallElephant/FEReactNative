@@ -12,6 +12,26 @@ import { StackNavigator } from 'react-navigation';
 
 var ITEM_HEIGHT = 100;
 
+// class SectionComponent extends Component {
+//     constructor(props){
+//         super(props);
+//
+//         // this.icons = {     //Step 2
+//         //     'up'    : require('./images/arrow-up.png'),
+//         //     'down'  : require('./images/arrow-down.png')
+//         // };
+//         //
+//         // this.state = {       //Step 3
+//         //     title       : props.title,
+//         //     expanded    : true
+//         // };
+//     }
+//
+//     render() {
+//         return <View></View>
+//     }
+// }
+
 export default class MyFlatList extends Component {
 
     _flatList;
@@ -49,7 +69,7 @@ export default class MyFlatList extends Component {
                 }}/>
                 <View style={{flex:1}}>
                     <FlatList
-                        ref ={(flatList)=>this._flatList = flatList}
+                        ref ={ (flatList) => this._flatList = flatList}
                         ListHeaderComponent = { this._header }
                         ListFooterComponent = { this._footer }
                         ItemSeparatorComponent = { this._separator }

@@ -33,7 +33,7 @@
 
 - (void)setup {
     NSURL *jsCodeLocation = [NSURL
-                             URLWithString:@"http://10.10.6.59:8081/index.ios.bundle?platform=ios"];
+                             URLWithString:@"http://127.0.0.1:8081/index.ios.bundle?platform=ios"];
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL : jsCodeLocation
                          moduleName        : @"PushDemo"
