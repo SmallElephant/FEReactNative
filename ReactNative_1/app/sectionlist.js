@@ -33,11 +33,13 @@ export default class MySectionList extends Component {
 
     _sectionHeader = (data) => {
         console.log('========'+JSON.stringify(data));
-         return    <TouchableOpacity style = {styles.sectionHeader}
+         return <TouchableOpacity style = {styles.sectionHeader}
                               onPress={()=>{ alert('test'); }}>
-                <View style = {{flex: 1, flexDirection: 'row', justifyContent: 'center'}}>
+                <View style = {{flex: 1, flexDirection: 'row'}}>
                     <Text style={ styles.sectionText }>{data.section.title}</Text>
-                    <Image source = { arrowIcon } style = { styles.sectionImage }/>
+                    <View style = { styles.sectionImage }>
+                        <Image source = { arrowIcon } style = { {width: 12, height: 12} }/>
+                    </View>
                 </View>
             </TouchableOpacity>
     };
@@ -73,13 +75,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     sectionText: {
-        flex: 8,
+        flex: 17,
         paddingLeft: 15,
         paddingTop: 20,
         backgroundColor: 'red'
     },
     sectionImage: {
-        flex: 2
+        flex: 3,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     item: {
         padding: 10,
