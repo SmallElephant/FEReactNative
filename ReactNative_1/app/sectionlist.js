@@ -89,24 +89,28 @@ export default class MySectionList extends Component {
                         <Text style = { [styles.tableHeaderText, styles.tableBorder, {flex: 10}] }>投资产品类别</Text>
                         <Text style = { [styles.tableHeaderText, styles.tableBorder, {flex: 15}] }>获得积分</Text>
                     </View>
-                    <View style = {{flex: 1, flexDirection: 'row', height: 120}}>
+                    <View style = {{flex: 1, flexDirection: 'row', height: 120, backgroundColor: '#F7F9FC'}}>
                         <View style = {[{flex: 10, alignItems: 'center', justifyContent: 'center'},styles.tableBorder]}>
-                            <Text style = {{fontSize: 13}}>U计划</Text>
-                            <Text style = {{fontSize: 13, marginTop: 5}}>优选计划</Text>
-                            <Text style = {{fontSize: 13, marginTop: 5}}>月升计划</Text>
+                            <Text style = {{fontSize: 12}}>U计划</Text>
+                            <Text style = {{fontSize: 12, marginTop: 5}}>优选计划</Text>
+                            <Text style = {{fontSize: 12, marginTop: 5}}>月升计划</Text>
                         </View>
                         <View style = {[{flex: 15, paddingTop: 10},styles.tableBorder]}>
                             <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10}}>投资金额*锁定期／12*0.05</Text>
-                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, marginTop: 10, color: '#3F3F3F'}}>举例：投资1万元6月期U计划，可获得250积分</Text>
-                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, marginTop: 10, color: '#3F3F3F'}}>月升计划锁定期为1个月，12月期以上产品锁定期均按12个月计算</Text>
+                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, marginTop: 8, color: '#3F3F3F', lineHeight: 15}}>举例：投资1万元6月期U计划，可获得250积分</Text>
+                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, marginTop: 8, color: '#3F3F3F', lineHeight: 20}}>月升计划锁定期为1个月，12月期以上产品锁定期均按12个月计算</Text>
                         </View>
                     </View>
                     <View style = {[styles.tableHeader, {height: 130}]}>
-                        <Text style = { [styles.tableHeaderText, styles.tableBorder, {flex: 10, lineHeight: 130}] }>薪计划</Text>
-                        <View style = {[{flex: 15, paddingTop: 10},styles.tableBorder]}>
-                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10}}>每笔投资金额*（到期时间-每次投资时间）／12*0.05</Text>
-                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, marginTop: 10, color: '#3F3F3F'}}>举例：首次投资1000元，获得50积分；第二次支付1000元，再获得45积分；以此类推</Text>
+                        <Text style = { [styles.tableHeaderText, styles.tableBorder, {flex: 10, lineHeight: 130, fontSize: 12}] }>薪计划</Text>
+                        <View style = {[{flex: 15, height: 130, paddingTop: 15}, styles.tableBorder]}>
+                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, lineHeight: 20}}>每笔投资金额*（到期时间-每次投资时间）／12*0.05</Text>
+                            <Text style = {{fontSize: 12, marginLeft: 10, marginRight: 10, marginTop: 5, color: '#3F3F3F', lineHeight: 20}}>举例：首次投资1000元，获得50积分；第二次支付1000元，再获得45积分；以此类推</Text>
                         </View>
+                    </View>
+                    <View style = { [styles.tableHeader, {backgroundColor: '#F7F9FC'}]}>
+                        <Text style = { [styles.tableHeaderText, styles.tableBorder, {flex: 10, fontSize: 12}] }>散标/债权</Text>
+                        <Text style = { [styles.tableHeaderText, styles.tableBorder, {flex: 15, color: '#999999', fontSize: 12}] }>不参与积分获取</Text>
                     </View>
                 </View>
                 <CircleRow name = {data.item.row1.line1}/>
