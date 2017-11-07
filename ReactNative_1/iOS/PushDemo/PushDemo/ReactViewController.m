@@ -8,6 +8,7 @@
 
 #import "ReactViewController.h"
 #import <React/RCTRootView.h>
+#import "PushEventEmitter.h"
 
 @interface ReactViewController ()
 
@@ -23,7 +24,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,8 +51,22 @@
                ]
        }
                           launchOptions    : nil];
-    self.view = rootView;
+    rootView.frame = CGRectMake(0, 150, [UIScreen mainScreen].bounds.size.width, 300);
+    [self.view addSubview:rootView];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(20, 64, 100, 30);
+    [button setTitle:@"测试回调" forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor redColor]];
+    [button addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
 }
 
+- (void)test {
+    PushEventEmitter *eventEmitter = [PushEventEmitter allocWithZone:nil];
+    [eventEmitter addEventReminderReceived:nil];
+}
 
 @end

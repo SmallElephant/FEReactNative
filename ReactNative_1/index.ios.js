@@ -15,12 +15,13 @@ import {
 //导入stack导航组件
 import MyFlatList from "./app/list";
 import MySectionList from "./app/sectionlist";
+import TestPage from "./app/test";
 
 export default class rootApp extends React.Component {
   render() {
       return (
         <View style = {styles.container} >
-            <MySectionList/>
+            <TestPage/>
         </View>
       );
   }
