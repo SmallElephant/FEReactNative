@@ -7,7 +7,6 @@
 //
 
 #import "PushManager.h"
-#import "PushEventEmitter.h"
 
 @implementation PushManager
 
@@ -19,7 +18,7 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(showMessage:(NSString *)message type:(NSString *)type)
 {
-    RCTLogInfo(@"Reactnative 本地调用 %@---%@---", message, type);
+    RCTLogInfo(@"FlyElephant 本地调用 %@---%@---", message, type);
 }
 
 @end
